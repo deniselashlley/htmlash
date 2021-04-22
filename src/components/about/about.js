@@ -30,8 +30,8 @@ const About = () => {
     <section>
       <SectionTitle>About Me</SectionTitle>
       <IntroductionText>
-      <p>As a web professional based in London, <br/>I have been building quality websites for more than 8 years. 
-        I specialise in HTML, CSS, JavaScript and other associated technologies</p>
+      <p>I am a web professional based in London, with more than 8 years experience of building quality and modern standard websites. 
+        <br/> I specialise in HTML, CSS, JavaScript and other associated technologies.</p>
       </IntroductionText>
       <SectionTitle>KEY SKILLS & EXPERTISE</SectionTitle>
       <IntroductionText>

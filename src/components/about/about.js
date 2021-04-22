@@ -11,7 +11,10 @@ const IntroductionText = styled.div`
 
   p {
     margin-bottom:  ${pxToRem(15)};
-    text-align: center;
+
+    @media (min-width: ${props => props.theme.responsive.medium}) {
+        text-align: center;
+    }
   }
 
   ul {

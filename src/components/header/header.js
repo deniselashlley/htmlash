@@ -84,7 +84,7 @@ const Header = () => (
         </Title>
       </Circle>
     </Block>
-    {/* <Navigation /> */}
+    <Navigation />
   </HeaderWrapper>
 )
 

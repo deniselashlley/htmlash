@@ -3,9 +3,10 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import About from '../components/about'
 import Container from '../components/container'
-// import Projects from '../components/projects'
+import Projects from '../components/projects'
 import SEO from '../components/seo'
 import { startCase } from 'lodash'
+import ContactLinks from '../components/contact-links'
 
 const Posts = ({ data, pageContext }) => {
   const posts = data.allContentfulPost.edges
@@ -23,7 +24,13 @@ const Posts = ({ data, pageContext }) => {
       <SEO title={startCase(basePath)} image={ogImage} />
       <Container>
         <About />
-        {/* <Projects data={posts} path={basePath} /> */}
+        <Projects data={posts} path={basePath} />
+        <section id="contact" className="page-section">
+          <h2>Contact</h2>
+          <div>
+            <ContactLinks />
+          </div>
+        </section>
       </Container>
     </Layout>
   )

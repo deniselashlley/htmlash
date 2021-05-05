@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import About from '../components/about'
-import Container from '../components/container'
 import Projects from '../components/projects'
 import SEO from '../components/seo'
 import { startCase } from 'lodash'
@@ -22,7 +21,7 @@ const Posts = ({ data, pageContext }) => {
   return (
     <Layout>
       <SEO title={startCase(basePath)} image={ogImage} />
-      <Container>
+      <div className="container">
         <About />
         <Projects data={posts} path={basePath} />
         <section id="contact" className="page-section">
@@ -31,7 +30,7 @@ const Posts = ({ data, pageContext }) => {
             <ContactLinks />
           </div>
         </section>
-      </Container>
+      </div>
     </Layout>
   )
 }

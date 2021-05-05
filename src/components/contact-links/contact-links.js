@@ -4,8 +4,7 @@ import TwitterIcon from '../../icons/twitter-icon'
 import EmailIcon from '../../icons/email-icon'
 import GithubIcon from '../../icons/github-icon'
 
-const ContactLinks = () => {
-  return (
+const ContactLinks = () => (
     <>
       <h3>Connect with me...</h3>
       <ul>
@@ -50,7 +49,6 @@ const ContactLinks = () => {
         </li>
       </ul>
     </>
-  )
-}
+);
 
 export default ContactLinks

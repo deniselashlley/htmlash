@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Hero from '../components/hero'
-import Container from '../components/container'
 import PageBody from '../components/page-body'
 import SEO from '../components/seo'
 
@@ -28,9 +27,9 @@ const PostTemplate = ({ data, pageContext }) => {
         image={ogImage}
       />
       <Hero title={title} image={heroImage} height={'50vh'} />
-      <Container>
+      <div className="container">
         <PageBody body={body} />
-      </Container>
+      </div>
     </Layout>
   )
 }

@@ -1,25 +1,11 @@
 import * as React from 'react'
-import styled from '@emotion/styled'
-import CardList from '../card-list'
 import Card from '../card'
-import { pxToRem } from '../../helper'
-import SectionTitle from '../section-title'
 
-const Section = styled.section`
-  margin: ${pxToRem(50)} 0;
-`
-
-const Projects = ({ data, path }) => {
-  return (
-    <Section id="projects">
-      <SectionTitle>Projects</SectionTitle>
-      <CardList>
-        {data.map(({ node: post }) => (
-          <Card key={post.id} {...post} basePath={path} />
-        ))}
-      </CardList>
-    </Section>
-  )
-}
+const Projects = ({ data, path }) => (
+    <section id="projects" className="section section-projects">
+      <h2 className="section-title">Projects</h2>
+      <Card data={data} basePath={path} />
+    </section>
+);
 
 export default Projects

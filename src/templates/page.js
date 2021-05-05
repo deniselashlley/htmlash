@@ -1,8 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Container from '../components/container'
-import PageTitle from '../components/page-title'
 import PageBody from '../components/page-body'
 import SEO from '../components/seo'
 
@@ -18,10 +16,10 @@ const PageTemplate = ({ data }) => {
             : body.childMarkdownRemark.excerpt
         }
       />
-      <Container>
-        <PageTitle>{title}</PageTitle>
+      <div className="container">
+        <h1 className="article-title">{title}</h1>
         <PageBody body={body} />
-      </Container>
+      </div>
     </Layout>
   )
 }

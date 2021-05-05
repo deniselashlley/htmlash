@@ -1,10 +1,6 @@
 import * as React from 'react'
-import styled from '@emotion/styled'
-import ContactLinks from '../contact-links'
-import StyledList from '../styled-components'
-import { pxToRem } from '../../helper'
 
-const FooterContainer = styled.footer`
+/* const FooterContainer = styled.footer`
   position: relative;
   overflow: hidden;
   height: 90px;
@@ -71,28 +67,28 @@ const InnerCircle = styled.div`
   margin-left: 8px;
   border-radius: 300px;
   background-color: ${props => props.theme.colors.white};
-`
+` */
 
 const Footer = () => {
   var date = new Date()
   var year = date.getFullYear()
 
   return (
-    <FooterContainer role="contentinfo">
-      <FooterInnerWrapper>
+    <footer className="footer" role="contentinfo">
+      {/* <FooterInnerWrapper>
         <OuterCirle>
           <InnerCircle>
             <FooterLinks>
               <ContactLinks />
             </FooterLinks>
           </InnerCircle>
-        </OuterCirle>
+      </OuterCirle> */}
 
         <p>
           Copyright &copy; <span>{year}</span> Denise Lashlley.
         </p>
-      </FooterInnerWrapper>
-    </FooterContainer>
+      {/* </FooterInnerWrapper> */}
+    </footer>
   )
 }
 

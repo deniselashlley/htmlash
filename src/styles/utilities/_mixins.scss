@@ -1,0 +1,88 @@
+/* Units */ 
+
+@mixin clearfix {
+    &::after {
+        clear: both;
+    }
+
+    &::before,
+    &::after {
+        content: ' ';
+        display: table;
+    }
+}
+
+// Mixin for Media Queries
+// Accepts a number or a string
+
+@mixin breakpoint($size) {
+
+    @if type-of($size) == 'number' {
+        @if unitless($size) {
+
+            @media (min-width: $size * 1px) { // + '0px' makes sure it's px value
+                @content;
+            }
+        }
+        @else if unit($size) == "px" {
+
+            @media (min-width: $size) {
+                @content;
+            }
+        }
+    }
+
+    @else if $size == mobile {
+
+        @media (min-width: $breakpoint-mobile) {
+            @content;
+        }
+    }
+
+    @else if $size == tabletPortrait {
+
+        @media (min-width: $breakpoint-tabletPortrait) {
+            @content;
+        }
+    }
+
+    @else if $size == tabletLandscape {
+
+        @media (min-width: $breakpoint-tabletLandscape) {
+            @content;
+        }
+    }
+
+    @else if $size == desktop {
+
+        @media (min-width: $breakpoint-desktop) {
+            @content;
+        }
+    }
+
+    @else if $size == desktopL {
+
+        @media (min-width: $breakpoint-desktopL) {
+            @content;
+        }
+    }
+
+    @else if $size == desktopXL {
+
+        @media (min-width: $breakpoint-desktopXL) {
+            @content;
+        }
+    }
+
+    @else if $size == mobileOnly {
+
+        @media (max-width: $breakpoint-tabletLandscape - 1) {
+            @content;
+        }
+    }
+
+    @else {
+
+        @error "Sorry, but `#{$size}` is not a valid media query variable. Try mobile, tabletPortrait, tabletLandscape, desktop, desktopL, desktopXL";
+    }
+}

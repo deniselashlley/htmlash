@@ -1,0 +1,16 @@
+// box model reset
+%elementreset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+html.kill-scroll {
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+  }
+
+body.kill-scroll {
+    overflow: hidden;
+}

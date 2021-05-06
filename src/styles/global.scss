@@ -1,12 +1,23 @@
-@import 'normalize';
-@import 'fonts';
+/* @import '_normalize';
+@import './utilities/_fonts';
+@import './utilities/_variables.scss';
+@import './utilities/_units';
+@import './utilities/_mixins';
+
+@import '_layout.scss';
+@import '_header';
+@import '_footer';
+@import '_homepage';
+@import '_article';
+*/
+@import '_normalize';
+@import './utilities/fonts';
 @import './utilities/variables';
 @import './utilities/units';
 @import './utilities/mixins';
 
-@import 'layout';
-@import 'header';
-@import 'footer';
-@import 'homepage';
-@import 'article';
 
+@import 'base';
+@import './components/layout';
+@import './components/homepage';
+@import './components/footer';

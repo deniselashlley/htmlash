@@ -1,0 +1,137 @@
+html,
+body {
+  font-family: $body-text;
+  font-size: 18px;
+  background: $white;
+  height: 100%;
+}
+.siteRoot {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.siteContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+footer {
+  width: 100%;
+}
+
+
+a, a:visited {
+  text-decoration: none;
+  color: #fa9500;
+
+
+  &:hover {
+   color: #f9c11e;   
+  }
+}
+
+html.kill-scroll {
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+}
+
+body.kill-scroll {
+  overflow: hidden;
+}
+
+.body-content {
+    margin: 0 auto;
+    color: $fuscous-gray;
+    //max-width: ${props => props.theme.sizes.maxWidthCentered};
+    h1,
+    h2,
+    h3 {
+      font-weight: 600;
+      line-height: 1.25;
+      margin: 0 0 1rem 0;
+      text-transform: capitalize;
+    }
+  
+    h1 {
+      font-size: 1.5em;
+    }
+    h2 {
+      font-size: 1.25em;
+    }
+    h3 {
+      font-size: 1em;
+    }
+  
+    p {
+      line-height: 1.6;
+      margin: 0 0 2em 0;
+    }
+  
+    a {
+      transition: 0.2s;
+      color: #FA9500;
+      //${props => props.theme.colors.persianGreen};*/
+      &:hover {
+        color: $lightning-yellow;
+      }
+    }
+  
+    del {
+      text-decoration: line-through;
+    }
+    strong {
+      font-weight: 600;
+    }
+    em {
+      font-style: italic;
+    }
+  
+    ul,
+    ol {
+      margin: 0 0 2em 0;
+    }
+  
+    ul {
+      li {
+        list-style: disc;
+        list-style-position: inside;
+        line-height: 1.25;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  
+    ol {
+      li {
+        list-style: decimal;
+        list-style-position: inside;
+        line-height: 1.25;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  
+    hr {
+      border-style: solid;
+      //border-color: ${props => props.theme.colors.secondary};
+      margin: 0 0 2em 0;
+    }
+  
+    blockquote {
+      font-style: italic;
+      //border-left: 4px solid ${props => props.theme.colors.secondary};
+      padding: 0 0 0 0.5em;
+    }
+  
+    pre {
+      margin: 0 0 2em 0;
+      border-radius: 2px;
+      //background: ${props => props.theme.colors.secondary} !important;
+      span {
+        background: inherit !important;
+      }
+    }
+  }

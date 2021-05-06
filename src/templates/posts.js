@@ -24,9 +24,10 @@ const Posts = ({ data, pageContext }) => {
       <div className="container">
         <About />
         <Projects data={posts} path={basePath} />
-        <section id="contact" className="page-section">
-          <h2>Contact</h2>
-          <div>
+        <section id="contact" className="section section--contact">
+          <h2 className="section__title">Connect with me...</h2>
+          <div className="section__content">
+            <div className="avatar"></div>
             <ContactLinks />
           </div>
         </section>

@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 
 const Card = ({ data, basePath }) => {
   return (
-    <ul>
+    <ul className="card-list">
       {data.map(({ node: post }) => (
           <li key={post.id} className="card-list__item">
             <Link to={`${basePath}/${post.slug}/`}>

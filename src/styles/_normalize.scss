@@ -87,27 +87,6 @@ video {
   vertical-align: baseline;
 }
 
-html,
-body {
-  font-family: 'Poppins';
-  font-size: 18px;
-  background: white;
-  height: 100%;
-}
-.siteRoot {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-.siteContent {
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 auto;
-}
-footer {
-  width: 100%;
-}
-
 article,
 aside,
 details,

@@ -1,0 +1,47 @@
+.footer {
+    position: relative;
+    overflow: hidden;
+    height: 90px;
+    padding: 84px 0;
+    
+    p {
+      position: absolute;
+      font-size: rem(11);
+      font-weight: bold;
+      margin: 0 5px 0;
+      z-index: 99;
+      text-align: center;
+      left: auto;
+      right: auto;
+      top: 85px;
+      width: 100%;
+    }
+
+    .footer__content {
+        padding: rem(38);
+        box-sizing: border-box;
+        background: $bali-hai;
+        border-top: 8px solid $shuttle-gray;
+
+        .outer-circle {
+            margin: 0 auto;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            width: rem(230);
+            height: rem(230);
+            border-radius: 300px;
+            background-color: $shuttle-gray;
+            z-index: 99;
+        }
+
+        .inner-circle {
+            width: rem(230);
+            height: rem(230);
+            margin-left: 8px;
+            border-radius: 300px;
+            background-color: $white;
+        }
+    }
+}

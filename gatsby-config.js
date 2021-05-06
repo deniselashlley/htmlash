@@ -22,15 +22,11 @@ module.exports = {
         slug: '/#contact',
       },
     ],
-    postsPerFirstPage: 7,
-    postsPerPage: 6,
     basePath: '/',
   },
   plugins: [
-    `gatsby-plugin-emotion`,
-    'gatsby-plugin-theme-ui',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

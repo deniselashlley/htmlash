@@ -1,0 +1,29 @@
+.article-title {
+    font-size: rem(20);
+    text-transform: capitalize;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 rem(30) 0;
+    line-height: 1.2;
+
+    @include breakpoint(tabletPortrait) {
+        font-size: rem(30);
+        margin: 0 0 rem(40) 0;
+    }
+
+        span {
+            margin: 0 0 0 rem(0.25);
+        }
+    
+        a {
+            transition: all 0.2s;
+            color: $fuscous-gray;
+
+            &:hover {
+                color: $highlight;
+            }
+        }
+}
+
+// .article-content {}
+// .article__hero-image {}

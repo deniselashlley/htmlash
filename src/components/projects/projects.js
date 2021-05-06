@@ -3,7 +3,7 @@ import Card from '../card'
 
 const Projects = ({ data, path }) => (
     <section id="projects" className="section section-projects">
-      <h2 className="section-title">Projects</h2>
+      <h2 className="section__title">Projects</h2>
       <Card data={data} basePath={path} />
     </section>
 );

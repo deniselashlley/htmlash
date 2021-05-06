@@ -8,13 +8,6 @@ import SEO from '../components/seo'
 const PostTemplate = ({ data, pageContext }) => {
   const { title, metaDescription, heroImage, body } = data.contentfulPost
 
-  let ogImage
-  try {
-    ogImage = heroImage.ogimg.src
-  } catch (error) {
-    ogImage = null
-  }
-
   return (
     <Layout>
       <SEO
@@ -24,7 +17,6 @@ const PostTemplate = ({ data, pageContext }) => {
             ? metaDescription.internal.content
             : body.childMarkdownRemark.excerpt
         }
-        image={ogImage}
       />
       <Hero title={title} image={heroImage} height={'50vh'} />
       <div className="container">
@@ -53,12 +45,7 @@ export const query = graphql`
       }
       heroImage {
         title
-        fluid(maxWidth: 1800) {
-          ...GatsbyContentfulFluid_withWebp_noBase64
-        }
-        ogimg: resize(width: 1800) {
-          src
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
       body {
         childMarkdownRemark {

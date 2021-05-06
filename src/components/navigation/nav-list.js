@@ -19,7 +19,7 @@ const NavList = ({ isOpen }) => {
     <ul className="nav-items">
       {menuLinks.map(link => (
         <li key={link.name}>
-          {link.name === 'Projects' ? (
+          {(link.name === 'Projects'  || link.name === 'Contact')? (
             <AnchorLink
               to={link.slug}
               title={link.name}

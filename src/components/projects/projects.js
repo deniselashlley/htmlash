@@ -3,8 +3,10 @@ import Card from '../card'
 
 const Projects = ({ data, path }) => (
     <section id="projects" className="section section-projects">
-      <h2 className="section__title">Projects</h2>
-      <Card data={data} basePath={path} />
+      <div className="section__content">
+        <h2 className="section__title">Projects</h2>
+        <Card data={data} basePath={path} />
+      </div>
     </section>
 );
 

@@ -6,28 +6,30 @@ import Projects from '../components/projects'
 import SEO from '../components/seo'
 import { startCase } from 'lodash'
 import ContactLinks from '../components/contact-links'
+import { StaticImage } from "gatsby-plugin-image"
 
 const Posts = ({ data, pageContext }) => {
   const posts = data.allContentfulPost.edges
   const { basePath } = pageContext
-  let ogImage
-
-  try {
-    ogImage = posts[0].node.heroImage.ogimg.src
-  } catch (error) {
-    ogImage = null
-  }
 
   return (
     <Layout>
-      <SEO title={startCase(basePath)} image={ogImage} />
+      <SEO title={startCase(basePath)} />
       <div className="container">
         <About />
         <Projects data={posts} path={basePath} />
         <section id="contact" className="section section--contact">
           <h2 className="section__title">Connect with me...</h2>
           <div className="section__content">
-            <div className="avatar"></div>
+            <StaticImage 
+              src="../../static/images/me.jpeg" 
+              width={280}
+              height={280}
+              placeholder="blurred"
+              alt="profile picture"
+              layout="fixed"
+              className="avatar" 
+            />
             <ContactLinks />
           </div>
         </section>
@@ -47,12 +49,7 @@ export const query = graphql`
           publishDate(formatString: "MMMM DD, YYYY")
           heroImage {
             title
-            fluid(maxWidth: 1800) {
-              ...GatsbyContentfulFluid_withWebp_noBase64
-            }
-            ogimg: resize(width: 1800) {
-              src
-            }
+            gatsbyImageData(layout: CONSTRAINED)
           }
           body {
             childMarkdownRemark {

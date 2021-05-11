@@ -15,7 +15,6 @@ module.exports = {
     description:
       'Denise is a web professional specialising in modern front-end development, based in London, UK',
     siteUrl: 'https://deniselashlley.io/',
-    image: '/images/share.jpg',
     menuLinks: [
       {
         name: 'Home',
@@ -38,7 +37,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets`,
         name: 'images',
       },
     },

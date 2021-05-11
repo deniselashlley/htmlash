@@ -12,7 +12,7 @@ const NavList = ({ isOpen }) => {
   const { menuLinks } = useSiteMetadata()
 
   const handleClick = event => {
-    console.log(event)
+    // console.log(event)
   }
 
   return (

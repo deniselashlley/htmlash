@@ -8,10 +8,10 @@ const Card = ({ data, basePath }) => {
       {data.map(({ node: post }) => (
           <li key={post.id} className="card-list__item">
             <Link to={`${basePath}/${post.slug}/`}>
-              { console.log(post)}
               <GatsbyImage
                 image={post.heroImage.gatsbyImageData}
                 className="card-item__image" 
+                alt={post.title}
               />
               <h3 className="card-list__title">{post.title}</h3>
             </Link>

@@ -4,9 +4,10 @@
     justify-content: space-around;
 
     .card-list__item {
-      position: relative;
-      border: 1px solid $mercury;
-      border-radius: 2px;
+      background-color: $white;
+      border: 1px solid $silver;
+      border-radius: rem(5);
+      overflow:hidden;
       //margin: 0 0 1em 0;
       width: 100%;
       transition: background 0.2s;
@@ -17,10 +18,6 @@
         flex: 0 0 32%;
       }
 
-      &:hover {
-        background: $mercury;
-      }
-
     a {
       display: flex;
       position: relative;
@@ -29,25 +26,20 @@
       width: 100%;
       color: $fuscous-gray;
       text-decoration: none;
-      transition: .5s ease;
-      
-      &:before {
-        content: '';
-        position: absolute;
-        display: block;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        }
-      }
+      transition: .5s ease; 
 
-      &:hover {
-        color: $white;
-        &:before {
-          background: rgba(255, 165, 31, 0.5);
-          z-index: 99;
+        &:hover {
+          color: $lightning-yellow;
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            // background:rgba(0, 0, 0, 0.6);
+          }
         }
       }
 
@@ -56,15 +48,10 @@
         padding-bottom: 60%;
 
         img {
-          object-fit: contain !important;
-          object-position: center !important;
+          object-fit:cover;
+          object-position: center top;
         }
       }
-    }
-
-    &__image {
-      border-top-left-radius: 1px;
-      border-top-right-radius: 1px;
     }
 
     &__title {
@@ -78,22 +65,37 @@
 }
 
 .section {
-  padding: rem(50) 0;
-  border-bottom:1px solid #DDDDDD;
+  padding: rem(25) 0;
+  margin: auto;
 
-  .section__title {
-    font-size: rem(30);
-    text-transform:uppercase;
+  &:not(:nth-child(odd)){ 
+    background-color: $cultured ;
+  }
+  
+  @include breakpoint(desktop) { 
+    padding: rem(50) 0;
+  }
+
+  &__title {
+    font-size: rem(38);
     font-weight: 400;
-    margin: rem(28) 0;
+    margin: rem(20) 0 rem(35);
     text-align: center;
-    color: #0a65a5;
+    color: $malibu;
     
     @media (desktop) {
       margin: rem(50) 0 rem(20);
     }
   }
 
+  &__subtitle {
+      font-size: rem(25);
+      font-weight: 400;
+      margin: rem(20) 0 rem(10);
+      text-align: center;
+      color: $malibu;
+  }
+  
   .section__content {
     line-height: 1.7;
     font-size: rem(18);
@@ -101,18 +103,30 @@
     max-width: rem(1024);
     padding: 0 rem(25);
 
-    p {
-      margin-bottom:  rem(15);
-      text-align: center;
-    }
+    &-introductory {
+        padding: rem(10) rem(30) rem(20);
 
-    ul {
-      display: flex;
-      flex-flow: wrap;
-      justify-content: space-evenly;
-      
-      li {
-        padding: 0 rem(8)
+        @include breakpoint(desktop) {
+          padding: 0 rem(120) rem(40);
+          font-size: rem(20);
+        }
+
+        p {
+          margin:0;
+  
+          @include breakpoint(tabletPortrait) { 
+            text-align: center;
+          }
+        }
+
+        ul {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
+        
+        li {
+          padding: 0 rem(8)
+        }
       }
     }
   }
@@ -122,23 +136,29 @@
       display:flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
 
-      @include breakpoint(desktop) {
-        flex-direction: row;
-      }
-
-      .avatar {
-        width: 300px;
-        height: 300px;
-        border: 1px solid $mercury;
-        margin-right: rem(25)
+      .profile-image {
+        width: 200px;
+        height: 200px;
+        border-radius: rem(5);
+        border: 1px solid $silver;
+        margin-right: rem(25);
+        display: none;
       }
 
       ul {
-        flex-direction: column;
+        display:flex;
+        width: 100%;
+        flex-direction: row;
         align-items: flex-start;
-        justify-content: space-evenly;
+        justify-content: space-around;
         margin-bottom: rem(25);
+        font-size: rem(16);
+
+        @include breakpoint(desktop) {
+          font-size: rem(18);
+        }
 
         li {
           margin: rem(15) 0;
@@ -161,4 +181,6 @@
       }
     }
   }
+
+  
 }

@@ -1,19 +1,15 @@
 .footer {
     position: relative;
     overflow: hidden;
-    height: 90px;
+    height: rem(90);
     padding: 84px 0;
     
     p {
-      position: absolute;
-      font-size: rem(11);
+      font-size: rem(12);
       font-weight: bold;
-      margin: 0 5px 0;
-      z-index: 99;
+      margin: 0 rem(5) rem(15);
       text-align: center;
-      left: auto;
-      right: auto;
-      top: 85px;
+      top: 55px;
       width: 100%;
     }
 
@@ -31,17 +27,25 @@
             right: 0;
             width: rem(230);
             height: rem(230);
-            border-radius: 300px;
+            border-radius: rem(300);
             background-color: $shuttle-gray;
             z-index: 99;
         }
 
         .inner-circle {
+            margin: auto;
             width: rem(230);
             height: rem(230);
-            margin-left: 8px;
-            border-radius: 300px;
+            margin-left: rem(8);
+            border-radius: rem(300);
             background-color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &__content {
+                margin-top: rem(-90);
+            }
         }
     }
 }

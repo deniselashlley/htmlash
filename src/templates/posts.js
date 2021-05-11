@@ -5,8 +5,7 @@ import About from '../components/about'
 import Projects from '../components/projects'
 import SEO from '../components/seo'
 import { startCase } from 'lodash'
-import ContactLinks from '../components/contact-links'
-import { StaticImage } from "gatsby-plugin-image"
+import Contact from '../components/contact';
 
 const Posts = ({ data, pageContext }) => {
   const posts = data.allContentfulPost.edges
@@ -18,21 +17,7 @@ const Posts = ({ data, pageContext }) => {
       <div className="container">
         <About />
         <Projects data={posts} path={basePath} />
-        <section id="contact" className="section section--contact">
-          <h2 className="section__title">Connect with me...</h2>
-          <div className="section__content">
-            <StaticImage 
-              src="../../static/images/me.jpeg" 
-              width={280}
-              height={280}
-              placeholder="blurred"
-              alt="profile picture"
-              layout="fixed"
-              className="avatar" 
-            />
-            <ContactLinks />
-          </div>
-        </section>
+        <Contact />
       </div>
     </Layout>
   )

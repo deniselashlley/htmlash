@@ -2,13 +2,14 @@
 $fuscous-gray:	   #57534A;
 $persian-green:    #00B39B;
 $bali-hai:		   #90ADB5;
-$lightning-yellow: #F9C11E;
-$shuttle-gray:     #53666E;
-$white:			   #FFF;
-$firebrick:		   #B22222;
+$lightning-yellow: #F6AE2D;
+$cadmium-orange:   #F6892D;   
+$shuttle-gray:     #0b2027; //charleston-green
+
+$white:			   #FFFFFF;
 $silver:		   #DDDDDD;
-$highlight:        #5b8bf7;
-$mercury:          #e9e9e9;
+$malibu:           #00B39B; // #5b8bf7;
+$cultured:         #F3F4F7;
 
 /* Breakpoints */
 $breakpoint-mobile:24em;//320px;
@@ -23,37 +24,10 @@ $body-text: 'Poppins Light', 'sans-serif';
 
 /* Sizes */
 $max-width: '1050px';
-$max-width-centered: '650px';
+$max-width-centered: 650px;
 
 
-/*
-colors: {
-    background: '#ffffff',
-    text: '#57534A',
-    primary: '#121212',
-    secondary: '#e9e9e9',
-    tertiary: '#f3f3f3',
-    highlight: '#5b8bf7',
-    fuscousGray: '#57534A',
-    persianGreen: '#00B39B',
-    baliHai: '#90ADB5',
-    lightningYellow: '#F9C11E',
-    shuttleGray: '#53666E',
-    white: '#FFF',
-    firebrick: '#B22222',
-    silver: '#DDDDDD',
-  },
-  logoText: 'Pacifico, cursive',
-  navText: 'Poppins, sans-serif',
-  fonts: {
-    body: 'Poppins Light, sans-serif',
-  },
-  sizes: {
-    maxWidth: '1050px',
-    maxWidthCentered: '650px',
-  },
-  responsive: {
-    small: '35em',
-    medium: '50em',
-    large: '70em',
-  }, */
+// #66C7F4
+// #4E878C; // steel-teal 
+//paolo-green #419D78
+//#53666E;

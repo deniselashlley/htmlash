@@ -40,8 +40,6 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
-  "main": "n/a",
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",

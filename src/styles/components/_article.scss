@@ -1,29 +1,49 @@
-.article-title {
-    font-size: rem(20);
-    text-transform: capitalize;
-    font-weight: 600;
-    text-align: center;
-    margin: 0 0 rem(30) 0;
-    line-height: 1.2;
+.article {
+    max-width: rem(1024);
+    padding: 0 rem(25);
+    // min-height: 100vh;
+    margin: 0 auto;
 
-    @include breakpoint(tabletPortrait) {
-        font-size: rem(30);
-        margin: 0 0 rem(40) 0;
+    &-title {
+        font-size: rem(40);
+        text-align: center;
     }
 
-        span {
-            margin: 0 0 0 rem(0.25);
-        }
-    
-        a {
-            transition: all 0.2s;
-            color: $fuscous-gray;
+    &-hero {
+        // background-color: black;
 
-            &:hover {
-                color: $highlight;
-            }
+    }
+
+    .gatsby-image-wrapper {
+        height: 15vh;
+        max-width: 650px;
+        margin: 0 auto;
+        overflow:hidden;
+
+        @include breakpoint(desktop) {
+            height: rem(368);
         }
+
+    }
 }
 
-// .article-content {}
-// .article__hero-image {}
+
+.article-content {
+    font-size: rem(18);
+    max-width: $max-width-centered;
+    margin: 0 auto;
+
+    p {
+        margin: rem(8) 0;
+    }
+
+    ul {
+        margin: rem(15) 0; 
+        li {
+            margin-left: rem(18);
+            list-style:disc;   
+        }
+        
+
+    }
+}

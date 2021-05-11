@@ -18,10 +18,11 @@ const PostTemplate = ({ data, pageContext }) => {
             : body.childMarkdownRemark.excerpt
         }
       />
-      <Hero title={title} image={heroImage} height={'50vh'} />
-      <div className="container">
-        <PageBody body={body} />
-      </div>
+        <Hero image={heroImage} />
+        <article className="article">
+          <h1 className="article-title">{title}</h1>
+          <PageBody body={body} />
+        </article>
     </Layout>
   )
 }
@@ -45,7 +46,10 @@ export const query = graphql`
       }
       heroImage {
         title
-        gatsbyImageData(layout: FULL_WIDTH)
+        gatsbyImageData(
+          layout: CONSTRAINED
+          placeholder: BLURRED
+        )
       }
       body {
         childMarkdownRemark {

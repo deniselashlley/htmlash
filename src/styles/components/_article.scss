@@ -25,8 +25,12 @@
 
     &-content {
         font-size: rem(18);
-        width: $max-width-centered;
-        padding-left: rem(30);
+       
+
+        @include breakpoint(tabletPortrait) {
+            width: $max-width-centered;
+            padding-left: rem(30);
+        }
     
         p {
             margin: rem(8) 0;

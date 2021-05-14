@@ -3016,6 +3016,16 @@ bfj@^5.2.1:
     hoopy "^0.1.2"
     tryer "^1.0.0"
 
+bfj@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/bfj/-/bfj-7.0.2.tgz#1988ce76f3add9ac2913fd8ba47aad9e651bfbb2"
+  integrity sha512-+e/UqUzwmzJamNF50tBV6tZPTORow7gQ96iFow+8b562OdMpEK0BcJEq2OSPEDmAbSMBQ7PKZ87ubFkgxpYWgw==
+  dependencies:
+    bluebird "^3.5.5"
+    check-types "^11.1.1"
+    hoopy "^0.1.4"
+    tryer "^1.0.1"
+
 big.js@^3.1.3:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-3.2.0.tgz#a5fc298b81b9e0dca2e458824784b65c52ba588e"
@@ -3108,7 +3118,7 @@ bl@^4.0.0, bl@^4.0.3:
     inherits "^2.0.4"
     readable-stream "^3.4.0"
 
-bluebird@^3.5.1, bluebird@^3.7.2:
+bluebird@^3.3.3, bluebird@^3.5.1, bluebird@^3.5.5, bluebird@^3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
   integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
@@ -3565,6 +3575,11 @@ chardet@^0.7.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
+check-types@^11.1.1:
+  version "11.1.2"
+  resolved "https://registry.yarnpkg.com/check-types/-/check-types-11.1.2.tgz#86a7c12bf5539f6324eb0e70ca8896c0e38f3e2f"
+  integrity sha512-tzWzvgePgLORb9/3a0YenggReLKAIb2owL03H2Xdoe5pKcUyWRSEQ8xfCar8t2SIAuEDwtmx2da1YB52YuHQMQ==
+
 check-types@^7.3.0:
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/check-types/-/check-types-7.4.0.tgz#0378ec1b9616ec71f774931a3c6516fad8c152f4"
@@ -4003,6 +4018,29 @@ contentful-batch-libs@^9.0.1:
     https-proxy-agent "^3.0.0"
     lodash "^4.0.1"
     moment "^2.18.1"
+
+contentful-export@^7.12.13:
+  version "7.12.13"
+  resolved "https://registry.yarnpkg.com/contentful-export/-/contentful-export-7.12.13.tgz#cf5a8995be529bf21dcce8816650e3cda9c7338c"
+  integrity sha512-x7mtZTWvFDg4JMwsUMhW1yfIu4DFb0E3yPlLqlNnuhHDvNLg2ckFRPX1UYelyK0EWedThBScxx/AGLcEPwJgvg==
+  dependencies:
+    bfj "^7.0.2"
+    bluebird "^3.3.3"
+    cli-table3 "^0.6.0"
+    contentful "^8.1.7"
+    contentful-batch-libs "^9.0.1"
+    contentful-management "^7.3.1"
+    echo-cli "^1.0.8"
+    figures "^3.2.0"
+    fs-extra "^9.0.0"
+    listr "^0.14.1"
+    listr-update-renderer "^0.5.0"
+    listr-verbose-renderer "^0.6.0"
+    lodash "^4.17.10"
+    mkdirp "^1.0.3"
+    moment "^2.22.2"
+    request "^2.87.0"
+    yargs "^15.3.1"
 
 contentful-import@^8.1.6:
   version "8.1.6"
@@ -4489,7 +4527,7 @@ date-fns@^1.27.2:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
 
-date-fns@^2.14.0:
+date-fns@^2.0.1, date-fns@^2.14.0:
   version "2.21.3"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.21.3.tgz#8f5f6889d7a96bbcc1f0ea50239b397a83357f9b"
   integrity sha512-HeYdzCaFflc1i4tGbj7JKMjM4cKGYoyxwcIIkHzNgCkX8xXDNJDZXgDDVchIWpN4eQc3lH37WarduXFZJOtxfw==
@@ -5924,7 +5962,7 @@ figures@^2.0.0:
   dependencies:
     escape-string-regexp "^1.0.5"
 
-figures@^3.0.0:
+figures@^3.0.0, figures@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/figures/-/figures-3.2.0.tgz#625c18bd293c604dc4a8ddb2febf0c88341746af"
   integrity sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg==
@@ -6238,7 +6276,7 @@ fs-extra@^8.1.0:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
-fs-extra@^9.1.0:
+fs-extra@^9.0.0, fs-extra@^9.1.0:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.1.0.tgz#5954460c764a8da2094ba3554bf839e6b9a7c86d"
   integrity sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==
@@ -7642,7 +7680,7 @@ hoek@6.x.x:
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-6.1.3.tgz#73b7d33952e01fe27a38b0457294b79dd8da242c"
   integrity sha512-YXXAAhmF9zpQbC7LEcREFtXfGq5K1fmd+4PHkBq8NUqmzW3G+Dq10bI/i0KucLRwss3YYFQ0fSfoxBZYiGUqtQ==
 
-hoopy@^0.1.2:
+hoopy@^0.1.2, hoopy@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/hoopy/-/hoopy-0.1.4.tgz#609207d661100033a9a9402ad3dea677381c1b1d"
   integrity sha512-HRcs+2mr52W0K+x8RzcLzuPPmVIKMSv97RGHy0Ea9y/mpcaK+xTrjICA04KAHi4GRzxliNqNJEFYWHghy3rSfQ==
@@ -9072,6 +9110,16 @@ listr-verbose-renderer@^0.5.0:
     chalk "^2.4.1"
     cli-cursor "^2.1.0"
     date-fns "^1.27.2"
+    figures "^2.0.0"
+
+listr-verbose-renderer@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/listr-verbose-renderer/-/listr-verbose-renderer-0.6.0.tgz#10d5a960c7763878b0812c884a11dde29ac16c33"
+  integrity sha512-P3bA/giMu432bs3gHiKXKOIHlWanCIlRhbhCfgKNgCoyvTvZsdbfkgX1BvThYXhm36cS8pOX3Z5vxXBFZC+NQw==
+  dependencies:
+    chalk "^2.4.1"
+    cli-cursor "^2.1.0"
+    date-fns "^2.0.1"
     figures "^2.0.0"
 
 listr@^0.14.1:
@@ -12547,7 +12595,7 @@ replace-ext@^1.0.0:
   resolved "https://registry.yarnpkg.com/replace-ext/-/replace-ext-1.0.1.tgz#2d6d996d04a15855d967443631dd5f77825b016a"
   integrity sha512-yD5BHCe7quCgBph4rMQ+0KkIRKwWCrHDOX1p1Gp6HwjPM5kVoCdKGNhN7ydqqsX6lJEnQDKZ/tFMiEdQ1dvPEw==
 
-request@^2.88.0, request@^2.88.2:
+request@^2.87.0, request@^2.88.0, request@^2.88.2:
   version "2.88.2"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.2.tgz#d73c918731cb5a87da047e207234146f664d12b3"
   integrity sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw==
@@ -14302,7 +14350,7 @@ trough@^1.0.0:
   resolved "https://registry.yarnpkg.com/true-case-path/-/true-case-path-2.2.1.tgz#c5bf04a5bbec3fd118be4084461b3a27c4d796bf"
   integrity sha512-0z3j8R7MCjy10kc/g+qg7Ln3alJTodw9aDuVWZa3uiWqfuBMKeAeP2ocWcxoyM3D73yz3Jt/Pu4qPr4wHSdB/Q==
 
-tryer@^1.0.0:
+tryer@^1.0.0, tryer@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/tryer/-/tryer-1.0.1.tgz#f2c85406800b9b0f74c9f7465b81eaad241252f8"
   integrity sha512-c3zayb8/kWWpycWYg87P71E1S1ZL6b6IJxfb5fvsUgsf0S2MVGaDhDXXjDMpdCpfWXqptc+4mXwmiy1ypXqRAA==
@@ -15537,7 +15585,7 @@ yargs@^13.3.2:
     y18n "^4.0.0"
     yargs-parser "^13.1.2"
 
-yargs@^15.4.1:
+yargs@^15.3.1, yargs@^15.4.1:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-15.4.1.tgz#0d87a16de01aee9d8bec2bfbf74f67851730f4f8"
   integrity sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==

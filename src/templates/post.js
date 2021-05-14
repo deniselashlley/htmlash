@@ -18,10 +18,13 @@ const PostTemplate = ({ data, pageContext }) => {
             : body.childMarkdownRemark.excerpt
         }
       />
-        <Hero image={heroImage} />
+        
         <article className="article">
           <h1 className="article-title">{title}</h1>
-          <PageBody body={body} />
+          <div className="article-block">
+            <Hero image={heroImage} />
+            <PageBody body={body} />
+          </div>
         </article>
     </Layout>
   )
@@ -39,14 +42,10 @@ export const query = graphql`
       }
       publishDate(formatString: "MMMM DD, YYYY")
       publishDateISO: publishDate(formatString: "YYYY-MM-DD")
-      tags {
-        title
-        id
-        slug
-      }
       heroImage {
         title
         gatsbyImageData(
+          quality: 90
           layout: CONSTRAINED
           placeholder: BLURRED
         )

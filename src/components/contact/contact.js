@@ -3,7 +3,7 @@ import ContactLinks from '../contact-links'
 import { StaticImage } from 'gatsby-plugin-image'
 
 const Contact = () => (
-  <section id="contact" className="section section--contact">
+  <section id="contact" className="section section-contact">
     <h2 className="section__title">Connect with me...</h2>
     <div className="section__content">
       <StaticImage

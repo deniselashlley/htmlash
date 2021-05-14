@@ -17,9 +17,7 @@ const SEO = ({ title, description, image }) => {
     `
   )
 
-  const defaultImage = site.siteMetadata.siteUrl
   const metaDescription = description || site.siteMetadata.description
-  const metaImage = image || defaultImage
 
   return (
     <Helmet
@@ -36,16 +34,7 @@ const SEO = ({ title, description, image }) => {
       <meta name="image" content={image} />
       <meta name="description" content={metaDescription} />
 
-      {/* OpenGraph tags */}
-      <meta property="og:title" content={title} />
-      <meta property="og:image" content={metaImage} />
-      <meta property="og:description" content={metaDescription} />
 
-      {/* Twitter Card tags */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:image" content={metaImage} />
-      <meta name="twitter:description" content={metaDescription} />
     </Helmet>
   )
 }

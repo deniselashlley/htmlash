@@ -1,13 +1,20 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
+const customQueries = {
+  xs: '(max-width: 320px)',
+  sm: '(max-width: 768px)',
+  md: '(max-width: 992px)',
+  l: '(max-width: 1024px)',
+  portrait: '(orientation: portrait)',
+};
+
 module.exports = {
   siteMetadata: {
-    title: 'Denise Lashlley | Portfolio',
+    title: 'Denise Lashlley',
     description:
       'Denise is a web professional specialising in modern front-end development, based in London, UK',
     siteUrl: 'https://deniselashlley.io/',
-    image: '/images/share.jpg',
     menuLinks: [
       {
         name: 'Home',
@@ -22,24 +29,27 @@ module.exports = {
         slug: '/#contact',
       },
     ],
-    postsPerFirstPage: 7,
-    postsPerPage: 6,
     basePath: '/',
   },
   plugins: [
-    `gatsby-plugin-emotion`,
-    'gatsby-plugin-theme-ui',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets`,
         name: 'images',
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-breakpoints`,
+      options: {
+          queries: customQueries,
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -68,13 +78,6 @@ module.exports = {
         environment: process.env.CONTENTFUL_ENV,
       }
     },
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: process.env.GOOGLE_ANALYTICS,
-        head: true,
-      },
-    },
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
@@ -101,7 +104,7 @@ module.exports = {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /assets/, // See below to configure properly
+          include: /assets/,
         },
       },
     },

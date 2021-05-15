@@ -1,29 +1,20 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled from '@emotion/styled'
-import PageTitle from '../components/page-title'
-import Container from '../components/container'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-
-const Text = styled.p`
-  text-align: center;
-  line-height: 1.6;
-  a {
-    color: ${props => props.theme.colors.text};
-  }
-`
 
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404" description="Page Not Found" />
-    <Container>
-      <PageTitle>Page Not Found</PageTitle>
-      <Text>
+    <div className="container" style={{ minHeight: '70vh'}}>
+      <section className="section section-notfound">
+        <h2 className="section__title">Page Not Found</h2>
+        <p className="section__content">
         Please return <Link to="/">home</Link> or use the menu to navigate to a
         different page.
-      </Text>
-    </Container>
+      </p>
+      </section>
+    </div>
   </Layout>
 )
 

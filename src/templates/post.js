@@ -1,65 +1,28 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Hero from '../components/hero'
-import Container from '../components/container'
-import PageBody from '../components/page-body'
-import SEO from '../components/seo'
+import ArticleSection from '../components/article-section';
 
-const PostTemplate = ({ data, pageContext }) => {
-  const { title, metaDescription, heroImage, body } = data.contentfulPost
-
-  let ogImage
-  try {
-    ogImage = heroImage.ogimg.src
-  } catch (error) {
-    ogImage = null
-  }
-
-  return (
+const PostTemplate = ({ data }) => (
     <Layout>
-      <SEO
-        title={title}
-        description={
-          metaDescription
-            ? metaDescription.internal.content
-            : body.childMarkdownRemark.excerpt
-        }
-        image={ogImage}
-      />
-      <Hero title={title} image={heroImage} height={'50vh'} />
-      <Container>
-        <PageBody body={body} />
-      </Container>
+        <ArticleSection data={data.contentfulPost} />
     </Layout>
-  )
-}
+)
 
 export const query = graphql`
   query($slug: String!) {
     contentfulPost(slug: { eq: $slug }) {
       title
       slug
-      metaDescription {
-        internal {
-          content
-        }
-      }
       publishDate(formatString: "MMMM DD, YYYY")
       publishDateISO: publishDate(formatString: "YYYY-MM-DD")
-      tags {
-        title
-        id
-        slug
-      }
       heroImage {
         title
-        fluid(maxWidth: 1800) {
-          ...GatsbyContentfulFluid_withWebp_noBase64
-        }
-        ogimg: resize(width: 1800) {
-          src
-        }
+        gatsbyImageData(
+          quality: 90
+          layout: CONSTRAINED
+          placeholder: BLURRED
+        )
       }
       body {
         childMarkdownRemark {
@@ -68,6 +31,12 @@ export const query = graphql`
           excerpt(pruneLength: 320)
         }
       }
+      website {
+        linkUrl
+        linkTitle
+      }
+      skillTag
+      year
     }
   }
 `

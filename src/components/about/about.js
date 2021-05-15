@@ -1,43 +1,14 @@
 import * as React from 'react'
-import styled from '@emotion/styled'
-import { pxToRem } from '../../helper'
-import SectionTitle from '../section-title'
 
-const IntroductionText = styled.div`
-  line-height: 2.5;
-  font-size: ${pxToRem(20)};
-  margin: 0 auto;
-  max-width: ${pxToRem(800)};
-
-  p {
-    margin-bottom:  ${pxToRem(15)};
-
-    @media (min-width: ${props => props.theme.responsive.medium}) {
-        text-align: center;
-    }
-  }
-
-  ul {
-    display: flex;
-    flex-flow: wrap;
-    justify-content: center;
-    
-    li {
-      padding: 0 ${pxToRem(8)}
-    }
-  }
-`
-
-const About = () => {
-  return (
-    <section>
-      <SectionTitle>About Me</SectionTitle>
-      <IntroductionText>
-      <p>I am a web professional based in London, with more than 8 years experience of building quality and modern standard websites. 
+const About = () => (
+    <section id="about" className="section section-about">
+      <h2 className="section__title">About me</h2>
+      <div className="section__content section__content-introductory">
+      <p>I am a web professional based in London, with more than 5 years experience of building quality and modern standard websites. 
         <br/> I specialise in HTML, CSS, JavaScript and other associated technologies.</p>
-      </IntroductionText>
-      <SectionTitle>KEY SKILLS & EXPERTISE</SectionTitle>
-      <IntroductionText>
+      </div>
+      <h3 className="section__subtitle">Key skills & expertise</h3>
+      <div className="section__content section__content-introductory">
         <ul>
           <li>HTML5</li>
           <li>CSS3</li>
@@ -52,9 +23,8 @@ const About = () => {
           <li>GIT</li>
           <li>Accessibility</li>
         </ul>
-      </IntroductionText>
+      </div>
     </section>
-  )
-}
+);
 
 export default About

@@ -1,13 +1,10 @@
 import * as React from 'react'
-import LinkedInIcon from '../../icons/linkedin-icon'
-import TwitterIcon from '../../icons/twitter-icon'
-import EmailIcon from '../../icons/email-icon'
-import GithubIcon from '../../icons/github-icon'
+import LinkedInIcon from '../../assets/icons/linkedin-icon'
+import TwitterIcon from '../../assets/icons/twitter-icon'
+import EmailIcon from '../../assets/icons/email-icon'
+import GithubIcon from '../../assets/icons/github-icon'
 
-const ContactLinks = () => {
-  return (
-    <>
-      <h3>Connect with me...</h3>
+const ContactLinks = () => (
       <ul>
         <li>
           <a
@@ -16,8 +13,7 @@ const ContactLinks = () => {
             rel="noreferrer"
             title="linkedIn"
           >
-            <LinkedInIcon fill="#53666E" />
-            <span>in/deniselashlley</span>
+            <LinkedInIcon fill="#C7CCDB" />
           </a>
         </li>
         <li>
@@ -27,8 +23,7 @@ const ContactLinks = () => {
             rel="noreferrer"
             title="@lashlled"
           >
-            <TwitterIcon fill="#53666E" />
-            <span>twitter.com/lashlled</span>
+            <TwitterIcon fill="#0b2027" />
           </a>
         </li>
         <li>
@@ -38,19 +33,15 @@ const ContactLinks = () => {
             rel="noreferrer"
             title="github"
           >
-            <GithubIcon fill="#53666E" />
-            <span>github.com/deniselashlley</span>
+            <GithubIcon fill="#C7CCDB" />
           </a>
         </li>
         <li>
           <a href="mailto: denise@deniselashlley.io" title="email">
-            <EmailIcon fill="#53666E" />
-            <span>denise@deniselashlley.io</span>
+            <EmailIcon fill="#0b2027" />
           </a>
         </li>
       </ul>
-    </>
-  )
-}
+);
 
 export default ContactLinks

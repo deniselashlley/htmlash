@@ -1,35 +1,24 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { useSiteMetadata } from '../../hooks/use-site-metadata'
 
-const activeLinkStyle = {
-  color: '#53666E',
-}
-
-const NavList = ({ isOpen }) => {
-  const { menuLinks } = useSiteMetadata()
-
-  const handleClick = event => {
-    // console.log(event)
-  }
+const NavListMobile = () => {
+  const { menuLinks } = useSiteMetadata();
 
   return (
-    <ul className="nav-items">
+    <ul className="menu-list">
       {menuLinks.map(link => (
-        <li key={link.name}>
+        <li key={link.name} className="menu-list__item">
           {(link.name === 'Projects'  || link.name === 'Contact')? (
             <AnchorLink
               to={link.slug}
               title={link.name}
-              activeStyle={activeLinkStyle}
+              label={link.name}
             />
           ) : (
             <Link
               to={link.slug}
-              activeStyle={activeLinkStyle}
-              onClick={handleClick}
             >
               {link.name}
             </Link>
@@ -40,14 +29,4 @@ const NavList = ({ isOpen }) => {
   )
 }
 
-NavList.propType = {
-  isOpen: PropTypes.boolean,
-  className: PropTypes.string,
-}
-
-NavList.defaultProps = {
-  isOpen: false,
-  className: '',
-}
-
-export default React.memo(NavList)
+export default React.memo(NavListMobile)

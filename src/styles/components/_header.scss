@@ -3,7 +3,7 @@
     background: $bali-hai;
     width: 100%;
     min-height: rem(118);
-    border-bottom: 8px solid $shuttle-gray;
+    border-bottom: 8px solid $charleston-green;
 
     @include breakpoint(desktop){
       position: relative;
@@ -24,12 +24,12 @@
     position: absolute;
     top: -100px;
     left: -45px;
-    border: 1px solid $shuttle-gray;
-    background: $shuttle-gray;
+    border: 1px solid $charleston-green;
+    background: $charleston-green;
     border-radius: 300px;
     height: 255px;
     width: 255px;
-    z-index: 99;
+    z-index: 5;
   
     @include breakpoint(desktop){
       top: -145px;
@@ -72,89 +72,67 @@
   }
 }
 
-
 .navigation {
-  opacity: 0.98;
-  z-index: 999;
   width: 100%;
   transition: 0.5s;
 
-  @media (min-width: 1101px) {
+  @include breakpoint (desktop) {
     position: static;
     display: flex;
     justify-content: flex-end;
-    opacity: 1;
-    z-index: 0;
   }
 
-  &__mobile {
-    position:fixed;
-    background: $bali-hai;
-    overflow: hidden;
-    height: 100vh;
-  }
-
-  .menu-button {
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin-right: rem(8);
-    margin-bottom: rem(8);
-    width: rem(45);
-    height: rem(45);
+  .menu-icon {
+    border: none;
+    height: rem(52);
+    margin-right: rem(-25);
+    margin-top: rem(10);
     padding: 0;
-    cursor: pointer;
-  
-    &:focus {
-      span {
-        //background-color: ${props => (props.active ? `white` : `black`);
-      }
+    position: absolute;
+    right: rem(30);
+    width: rem(52);
+    z-index: 30;
+
+    &__line {
+        background-color: $white;
+        display: block;
+        height: 2px;
+        left: 50%;
+        opacity: 1;
+        position: absolute;
+        top: rem(25);
+        transform: translate(-50%, 0);
+        transform-origin: center center;
+        transition: top 0.3s ease 0.3s, transform 0.3s ease, background-color 500ms ease;
+        width: 60%;
+
+        &:nth-child(1) {
+            top: rem(18);
+        }
+
+        &:nth-child(3) {
+            top: rem(32);
+        }
     }
-  
-    span {
-      position: absolute;
-      left: 50%;
-      // top: rem(25);
-      background-color: black;
-      display: block;
-      height: 2px;
-      width: 50%;
-      transform: translate(-50%, 0);
-      transform-origin: center center;
-  
-      transition: top 0.3s ease 0.3s, transform 0.3s ease,
-        background-color 500ms ease;
+
+    &:active,
+    &:focus,
+    &:hover {
+        .menu-icon__line {
+            background-color: $white;
+        }
     }
-  
-    span:nth-of-type(1) {
-      /* transform: ${props =>
-        props.active
-          ? `translate(-50%, 0) rotate(45deg)`
-          : `translate(0 0) rotate(0deg)`};
-      top: ${props => (props.active ? `rem(25)` : `rem(18)`); */
-    }
-  
-    span:nth-of-type(2) {
-      // opacity: ${props => (props.active ? `0` : `1`);
-    }
-  
-    span:nth-of-type(3) {
-      /* transform: ${props =>
-        props.active
-          ? `translate(-50%, 0) rotate(-45deg)`
-          : `translate(0 0) rotate(0deg)`};
-      top: ${props => (props.active ? `rem(25)` : `rem(32)`); */
-    }
+
   }
 
-  .nav-items {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    padding-top: rem(60);
-  
+  .menu-list.isMobile {
+    display:none;
+  }
+
+  .menu-list {
+    
     @include breakpoint(tabletPortrait) {
+      display: flex;
       flex-direction: row;
       justify-content: flex-end;
       align-items: flex-end;
@@ -175,10 +153,59 @@
     a {
       color: $white;
       text-transform: lowercase;
-      font-size: rem(19);
+      font-size: rem(20);
   
       &:hover {
-        color: $shuttle-gray;
+        color: $charleston-green;
+      }
+    }
+  }
+
+  .menu-list--mobile {
+    display: none;
+  }
+
+  &-menu--active {
+
+    .menu-icon__line {
+      opacity: 0;
+      transition: top 0.3s ease, transform 0.3s ease 0.3s;
+
+      &:nth-child(1) {
+          opacity: 1;
+          top: rem(25);
+          transform: translate(-50%, 0) rotate(-45deg);
+      }
+
+      &:nth-child(3) {
+          opacity: 1;
+          top: rem(25);
+          transform: translate(-50%, 0) rotate(45deg);
+      }
+    }
+
+    .menu-list--mobile {
+      display: flex;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $charleston-green;
+      opacity: 1;
+      z-index: 20;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding-top: rem(30);
+
+      .menu-list__item {
+        font-size: rem(25);
+        font-weight: bold;
+
+        a {
+          &:hover {
+            color: $white;
+          }
+        }
       }
     }
   }

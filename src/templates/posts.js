@@ -1,15 +1,15 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import About from '../components/about'
-import Projects from '../components/projects'
-import SEO from '../components/seo'
-import { startCase } from 'lodash'
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import About from '../components/about';
+import Projects from '../components/projects';
+import SEO from '../components/seo';
+import { startCase } from 'lodash';
 import Contact from '../components/contact';
 
 const Posts = ({ data, pageContext }) => {
-  const posts = data.allContentfulPost.edges
-  const { basePath } = pageContext
+  const posts = data.allContentfulPost.edges;
+  const { basePath } = pageContext;
 
   return (
     <Layout>
@@ -20,8 +20,8 @@ const Posts = ({ data, pageContext }) => {
         <Contact />
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query {
@@ -47,6 +47,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default Posts
+export default Posts;

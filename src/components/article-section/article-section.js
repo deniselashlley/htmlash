@@ -1,17 +1,16 @@
-import * as React from 'react'
-import Hero from '../hero'
-import shortid from 'shortid'
-import ReactHtmlParser from 'react-html-parser'
+import * as React from 'react';
+import Hero from '../hero';
+import shortid from 'shortid';
+import ReactHtmlParser from 'react-html-parser';
 
 const ArticleSection = ({ data }) => {
-  const { title, heroImage, body, website, year, skillTag } = data
+  const { title, heroImage, body, website, year, skillTag } = data;
   return (
     <article className="article">
       <h1 className="article-title">{title}</h1>
       <div className="article-block">
         <Hero image={heroImage} />
         <div className="article-content">
-          
           <div>{ReactHtmlParser(body.childMarkdownRemark.html)}</div>
           {website && (
             <p>
@@ -25,7 +24,7 @@ const ArticleSection = ({ data }) => {
           {skillTag && (
             <>
               <ul className="article-tags-lists">
-                {skillTag.map(item => (
+                {skillTag.map((item) => (
                   <li className="article-tags-item" key={shortid.generate()}>
                     {item}
                   </li>
@@ -36,7 +35,7 @@ const ArticleSection = ({ data }) => {
         </div>
       </div>
     </article>
-  )
-}
+  );
+};
 
-export default ArticleSection
+export default ArticleSection;

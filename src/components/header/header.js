@@ -1,6 +1,6 @@
-import * as React from 'react'
-import { Link } from 'gatsby'
-import Navigation from '../navigation'
+import * as React from 'react';
+import { Link } from 'gatsby';
+import Navigation from '../navigation';
 
 const Header = () => (
   <header className="header" role="banner">
@@ -13,6 +13,6 @@ const Header = () => (
     </div>
     <Navigation />
   </header>
-)
+);
 
-export default Header
+export default Header;

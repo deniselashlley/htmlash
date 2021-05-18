@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-const TwitterIcon = props => {
+const TwitterIcon = (props) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
       <path
@@ -9,11 +9,11 @@ const TwitterIcon = props => {
         fillRule="nonzero"
       />
     </svg>
-  )
-}
+  );
+};
 
 TwitterIcon.defaultProps = {
   fill: '#000',
-}
+};
 
-export default TwitterIcon
+export default TwitterIcon;

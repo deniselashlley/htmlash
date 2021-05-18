@@ -1,16 +1,16 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
 import ArticleSection from '../components/article-section';
 
 const PostTemplate = ({ data }) => (
-    <Layout>
-        <ArticleSection data={data.contentfulPost} />
-    </Layout>
-)
+  <Layout>
+    <ArticleSection data={data.contentfulPost} />
+  </Layout>
+);
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     contentfulPost(slug: { eq: $slug }) {
       title
       slug
@@ -18,11 +18,7 @@ export const query = graphql`
       publishDateISO: publishDate(formatString: "YYYY-MM-DD")
       heroImage {
         title
-        gatsbyImageData(
-          quality: 90
-          layout: CONSTRAINED
-          placeholder: BLURRED
-        )
+        gatsbyImageData(quality: 90, layout: CONSTRAINED, placeholder: BLURRED)
       }
       body {
         childMarkdownRemark {
@@ -39,6 +35,6 @@ export const query = graphql`
       year
     }
   }
-`
+`;
 
-export default PostTemplate
+export default PostTemplate;

@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-const LinkedInIcon = props => {
+const LinkedInIcon = (props) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
       <path
@@ -9,11 +9,11 @@ const LinkedInIcon = props => {
         fillRule="nonzero"
       />
     </svg>
-  )
-}
+  );
+};
 
 LinkedInIcon.defaultProps = {
   fill: '#000',
-}
+};
 
-export default LinkedInIcon
+export default LinkedInIcon;

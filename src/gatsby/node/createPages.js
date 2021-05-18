@@ -1,19 +1,19 @@
-const config = require('../../../gatsby-config')
-const query = require('../data/query')
-const path = require(`path`)
-const { paginate } = require(`gatsby-awesome-pagination`)
+const config = require('../../../gatsby-config');
+const query = require('../data/query');
+const path = require(`path`);
+const { paginate } = require(`gatsby-awesome-pagination`);
 
 module.exports = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
-  const basePath = config.siteMetadata.basePath || '/'
+  const basePath = config.siteMetadata.basePath || '/';
 
   // Create a page for each "post"
-  const postsQuery = await graphql(query.data.posts)
-  const posts = postsQuery.data.allContentfulPost.edges
+  const postsQuery = await graphql(query.data.posts);
+  const posts = postsQuery.data.allContentfulPost.edges;
   posts.forEach((post, i) => {
-    const next = i === posts.length - 1 ? null : posts[i + 1].node
-    const prev = i === 0 ? null : posts[i - 1].node
+    const next = i === posts.length - 1 ? null : posts[i + 1].node;
+    const prev = i === 0 ? null : posts[i - 1].node;
 
     createPage({
       path: `${basePath === '/' ? '' : basePath}/${post.node.slug}/`,
@@ -24,8 +24,8 @@ module.exports = async ({ graphql, actions }) => {
         prev,
         next,
       },
-    })
-  })
+    });
+  });
 
   // Create a page containing all "posts" and paginate.
   paginate({
@@ -39,5 +39,5 @@ module.exports = async ({ graphql, actions }) => {
       basePath: basePath === '/' ? '' : basePath,
       paginationPath: basePath === '/' ? '' : `/${basePath}`,
     },
-  })
-}
+  });
+};

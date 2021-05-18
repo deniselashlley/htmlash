@@ -1,6 +1,6 @@
 .container {
+    position: relative;
     padding: rem(30) 0;
-    // display: flex;
 }
 
 .page-section {
@@ -64,6 +64,29 @@
       li {
         padding: 0 rem(8)
       }
+    }
+  }
+
+}
+
+.back-to-top {
+    position:sticky; 
+    float: right;
+    padding-right: rem(30);
+    bottom: 0;
+
+    .back-to-button {
+      background-color:$persian-green;
+      padding: 5px 15px;
+      border-radius: rem(300);
+      font-weight: bold;
+      cursor:pointer;
+
+    .gatsby-image-wrapper {
+        img {
+          object-fit: contain !important;
+        }
+      
     }
   }
 

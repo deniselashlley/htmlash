@@ -33,6 +33,6 @@ module.exports = ({ actions }) => {
     ]) {
       id: ID!
     }
-  `
-  actions.createTypes(typeDefs)
-}
+  `;
+  actions.createTypes(typeDefs);
+};

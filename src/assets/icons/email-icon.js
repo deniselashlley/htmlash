@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-const EmailIcon = props => {
+const EmailIcon = (props) => {
   return (
     <svg width="28" height="28" xmlns="http://www.w3.org/2000/svg">
       <g fill="none" fillRule="evenodd">
@@ -12,11 +12,11 @@ const EmailIcon = props => {
         />
       </g>
     </svg>
-  )
-}
+  );
+};
 
 EmailIcon.defaultProps = {
   fill: '#000',
-}
+};
 
-export default EmailIcon
+export default EmailIcon;

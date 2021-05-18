@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-const GithubIcon = props => {
+const GithubIcon = (props) => {
   return (
     <svg width="28" height="28" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -9,11 +9,11 @@ const GithubIcon = props => {
         fillRule="nonzero"
       />
     </svg>
-  )
-}
+  );
+};
 
 GithubIcon.defaultProps = {
   fill: '#000',
-}
+};
 
-export default GithubIcon
+export default GithubIcon;

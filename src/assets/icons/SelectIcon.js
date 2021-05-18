@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from '@emotion/styled'
+import React from 'react';
+import styled from '@emotion/styled';
 
 const SVG = styled.svg`
   padding: 0;
   width: 0.6rem;
-`
+`;
 
-const SelectIcon = props => {
+const SelectIcon = (props) => {
   return (
     <SVG viewBox="0 0 292.362 292.362">
       <path
@@ -15,7 +15,7 @@ const SelectIcon = props => {
   s9.233-1.811,12.847-5.428L286.935,95.074c3.613-3.617,5.427-7.898,5.427-12.847C292.362,77.279,290.548,72.998,286.935,69.377z"
       />
     </SVG>
-  )
-}
+  );
+};
 
-export default SelectIcon
+export default SelectIcon;

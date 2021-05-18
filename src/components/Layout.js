@@ -1,15 +1,17 @@
-import React, { useEffect } from 'react'
-import Header from './header'
-import Footer from './footer'
-import '../styles/global.scss'
+import React, { useEffect } from 'react';
+import Header from './header';
+import Footer from './footer';
+import BackToTop from './back-to-top';
+import '../styles/global.scss';
 
-const Layout = props => {
-  function handleFirstTab(e) {
+const Layout = (props) => {
+  const handleFirstTab = (e) => {
     if (e.keyCode === 9) {
-      document.body.classList.add('user-is-tabbing')
+      document.body.classList.add('user-is-tabbing');
     }
-  }
-  useEffect(() => window.addEventListener('keydown', handleFirstTab), [])
+  };
+
+  useEffect(() => window.addEventListener('keydown', handleFirstTab), []);
 
   return (
     <>
@@ -17,10 +19,13 @@ const Layout = props => {
         Skip to content
       </a>
       <Header />
-      <main id="main" role="main">{props.children}</main>
+      <main id="main" role="main">
+        {props.children}
+      </main>
+      <BackToTop />
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

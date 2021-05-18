@@ -1,6 +1,6 @@
-import * as React from 'react'
-import ContactLinks from '../contact-links'
-import { StaticImage } from 'gatsby-plugin-image'
+import * as React from 'react';
+import ContactLinks from '../contact-links';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const Contact = () => (
   <section id="contact" className="section section-contact">
@@ -16,6 +16,6 @@ const Contact = () => (
       <ContactLinks />
     </div>
   </section>
-)
+);
 
-export default Contact
+export default Contact;

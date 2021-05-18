@@ -1,17 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import NavList from './nav-list'
+import NavListMobile from './nav-list-mobile'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints';
-
-/* const MobileNavList = styled(NavList)`
-  position: absolute;
-  top: 0;
-  z-index: 999;
-  display: block;
-  width: 100%;
-` */
+import cn from 'classnames';
 
 const Navigation = () => {
   const [showMenu, setMenu] = useState(false)
+  const navRef = useRef(null);
   const breakpoints = useBreakpoint();
 
   useEffect(() => {
@@ -36,15 +31,19 @@ const Navigation = () => {
   }
 
   return (
-    <nav className="navigation">
+    <nav className={cn ('navigation', {'navigation-menu--active' : showMenu})} ref={navRef}>
       { breakpoints.sm ? (
         <>
-          <button className="menu-button" type="button" onClick={handleShowMenu}>
-            <span />
-            <span />
-            <span />
+          <button 
+            className="menu-icon"
+            type="button" 
+            onClick={handleShowMenu}
+          >
+            <span className="menu-icon__line" />
+            <span className="menu-icon__line" />
+            <span className="menu-icon__line" />
           </button>
-          { showMenu && <NavList isOpen={showMenu} /> }
+          <NavListMobile isOpen={showMenu} handleClosed={navRef} />
         </>
         ) : <NavList />
     }

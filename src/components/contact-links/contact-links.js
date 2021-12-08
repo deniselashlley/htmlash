@@ -7,7 +7,7 @@ import GithubIcon from '../../assets/icons/github-icon';
 const ContactLinks = () => (
   <ul>
     <li>
-      <a href="https://uk.linkedin.com/in/deniselashlley/" target="_blank" rel="noreferrer" title="linkedIn">
+      <a href="https://uk.linkedin.com/in/deniselashlley/" target="_blank" rel="noreferrer" title="linkedIn/deniselashlley">
         <LinkedInIcon fill="#C7CCDB" />
       </a>
     </li>
@@ -17,12 +17,12 @@ const ContactLinks = () => (
       </a>
     </li>
     <li>
-      <a href="https://github.com/deniselashlley" target="_blank" rel="noreferrer" title="github">
+      <a href="https://github.com/deniselashlley" target="_blank" rel="noreferrer" title="github/deniselashlley">
         <GithubIcon fill="#C7CCDB" />
       </a>
     </li>
     <li>
-      <a href="mailto: denise@deniselashlley.io" title="email">
+      <a href="mailto: denise@deniselashlley.io" title="denise@deniselashlley.io">
         <EmailIcon fill="#0b2027" />
       </a>
     </li>

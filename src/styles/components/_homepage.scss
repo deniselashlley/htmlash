@@ -86,8 +86,9 @@
     text-align: center;
     color: $malibu;
     
-    @media (desktop) {
+    @include breakpoint(desktop) {
       margin: rem(50) 0 rem(20);
+      font-size: rem(50);
     }
   }
 
@@ -128,8 +129,24 @@
           justify-content: center;
         
         li {
-          padding: 0 rem(8)
+          // padding: 0 rem(8);
+
+          &:before {
+            content: "\2022";
+            color: $bali-hai;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
+            width: 1rem;
+            margin: 0 0.5rem;
+
+            @include breakpoint(tabletPortrait) { 
+               margin: 0 1rem;
+            }
+          }
         }
+
+        
       }
     }
   }

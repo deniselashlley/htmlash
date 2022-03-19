@@ -33,6 +33,11 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-instagram-all`,
+      options: {
+             access_token: process.env.INSTAGRAM_TOKEN }
+    },
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
